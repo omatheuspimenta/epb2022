@@ -9,7 +9,7 @@ Este curso irá apresentar este contexto e aplicação do método BASiNET que di
 
 ---
 ## Conteúdo programático
-### 08/08/2022
+### 08/08/2022 - [slides](slides/08-08-basinet-epb-2022.pdf)
 * Apresentação dos conceitos de extração de características de RNA;
 * Apresentação do método [BASiNET](https://doi.org/10.1093/nar/gky462)
 * Hands on! Instalação e classificação de sequências biológicas utilizando o pacote [BASiNET](https://cran.r-project.org/package=BASiNET)
@@ -32,6 +32,8 @@ Este curso irá apresentar este contexto e aplicação do método BASiNET que di
 ---
 ## Métodos
 Abaixo alguns métodos disponíveis para a classificação de RNA. Sinta-se livre para utiliza-los e complementar essa lista com novos métodos :smile: .
+* [BASiNET](https://doi.org/10.1093/nar/gky462): Método disponível para a classificação de sequências biológicas. Disponível para a classificação de RNA codificantes, não-codificantes longos e curtos. Disponível no CRAN: [https://cran.r-project.org/web/packages/BASiNET/](https://cran.r-project.org/web/packages/BASiNET/). Tutorial de instalação e uso disponível em [`/tutorials/install_basinet.md`](/tutorials/install_basinet.md).
+* [BASiNETEntropy](https://arxiv.org/abs/2203.15635): Método disponível para a classificação de sequências biológicas. Disponível para a classificação de RNA codificantes, não-codificantes longos e curtos. Disponível no CRAN: [https://cran.r-project.org/web/packages/BASiNETEntropy](https://cran.r-project.org/web/packages/BASiNETEntropy). Tutorial de instalação e uso disponível em [`/tutorials/install_basinetentropy.md`](/tutorials/install_basinetentropy.md).
 * [RNAcon](https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-15-127): Método disponível para a classificação de RNA codificante e não-codificante. Além da classificação binária é possível classificar o tipo de RNA pequeno não codificante. As características selecionadas para o classificador SVM são referentes a composição dos nucleotideos. Disponível em [`/methods/RNAcon/`](/methods/RNAcon/). Execução direta utilizando o guia de uso disponível no arquivo. 
 * [PLEK](http://www.biomedcentral.com/1471-2105/15/311): Método disponível para a classificação de RNA codificante e não-codificante. As características selecionadas para o classificador SVM são referentes ao ```k-mers```. Disponível para download em: [https://sourceforge.net/projects/plek/files/](https://sourceforge.net/projects/plek/files/). Tutorial para uso e instalação disponível em: [http://202.200.112.245/plek/installation.html](http://202.200.112.245/plek/installation.html).  
 **Etapa de treinamento pode levar tempo segundo autores**
