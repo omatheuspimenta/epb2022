@@ -1,9 +1,9 @@
 # Manipulação de arquivos FASTA/Q utilizando [SeqKit](https://bioinf.shenwei.me/seqkit/)
 
-Usualmente a manipulação de arquivos FASTA/Q  inclui conversão, busca, filtragem, remoção de sequências duplicadas, mistura e amostragem. Diversas ferramentas são disponibilizadas com estes objetivos, até mesmo podemos criar nossas próprias ferramentas para a manipulação. O que ocorre é que geralmente essas ferramentas não são particularmente eficientes, são disponibilizadas somente para alguns sistemas operacionais e até mesmo dependem de diversas outras bibliotecas para seu funcionamento. Um outro fator limitante em relação as ferramentas é que nem sempre há uma forma amigável de utilização ao usuário.  
+Usualmente, a manipulação de arquivos FASTA/Q  inclui conversão, busca, filtragem, remoção de sequências duplicadas, mistura e amostragem. Diversas ferramentas são disponibilizadas com estes objetivos, fazendo com que seja possível nós mesmos criarmos nossas próprias ferramentas para a manipulação. O que ocorre é que, geralmente, essas ferramentas não são particularmente eficientes, são disponibilizadas somente para alguns sistemas operacionais sendo dependentes de diversas outras bibliotecas para seu funcionamento. Um outro fator limitante em relação as ferramentas é que nem sempre há uma forma amigável de utilização ao usuário.  
 A ferramenta [SeqKit](https://bioinf.shenwei.me/seqkit/) disponibiliza um executável binário para a maior parte dos sistemas operacionais, incluindo Windows, Linux e MAC OS. Além de não possuir nenhuma depêndencia ou configurações prévias.  
 Este tutorial traz um guia amigável para iniciantes, com informaçõs detalhadas sobre como instalar o SeqKit sem ter qualquer conhecimento técnico.  
-__Este tutorial foi desenvolvido para o sistema operacional Linux, em particular distribuições Ubuntu 22.04, além do usuário necessitar privelégios de administrador para a instalação dos pacotes__ 
+__Este tutorial foi desenvolvido para o sistema operacional Linux, em particular, distribuições Ubuntu 22.04, além do usuário necessitar de privelégios de administrador para a instalação dos pacotes__ 
 
 ## Instalação do SeqKit no Linux
 ### Etapa 01: Download do arquivo binário
@@ -14,7 +14,7 @@ Após o download, abra o diretório e extraia os arquivos baixados. Caso queira 
 ```{bash}
 tar -zxvf *.tar.gz
 ```
-Após a extração do arquivo, utilizando o privilégio de instalação, copie o arquivo para o diretório `/usr/local/bin` através do comando (sua senha `sudo` será requisitada)
+Após a extração do arquivo, utilizando o privilégio de instalação, copie o arquivo para o diretório `/usr/local/bin`, através do comando (sua senha `sudo` será requisitada)
 
 ```{bash}
 sudo cp seqkit /usr/local/bin/
@@ -165,17 +165,17 @@ Utilizaremos nosso dataset [HA1](/dataset/HA1/) como exemplo.
 ```{bash}
 seqkit rmdup -s < gencode.v32.lncRNA_transcripts.fa > lncRNA_nodup.fasta
 ```
-Observe que podemos utilizar a própria estrutura do `bash` para realizar o STDIN e o STDOUT utilizando `>` e `<`.
+Observe que podemos utilizar a própria estrutura do `bash` para realizar o STDIN e o STDOUT, utilizando `>` e `<`.
 
 A seguinte mensagem é exibida
 ```{bash}
 [INFO] 100 duplicated records removed
 ```
 
-Podemos aplicar em todos os arquivos esse comando e realizar outras modificações, como por exemplo remover sequências duplicadas baseadas em seu nome (name).
+Podemos aplicar em todos os arquivos esse comando e realizar outras modificações como, por exemplo, remover sequências duplicadas baseadas em seu nome (name).
 
 #### Renomear cabeçalho dos arquivos FASTA
-Em alguns momentos é interessante renomear o cabeçalhos das sequências armazenadas em arquivos FASTA. Quando trabalhamos com análise de métodos, é interessante sabermos de qual classe é cada sequência e a depender do método não é explícito a saída da classe real e da classe predita, informando apenas o nome da sequência.  
+Em alguns momentos é interessante renomear os cabeçalhos das sequências armazenadas em arquivos FASTA. Quando trabalhamos com análise de métodos, é interessante sabermos de qual classe é cada sequência e a depender do método não é explícito a saída da classe real e da classe predita, informando apenas o nome da sequência.  
 Para renomear o cabeçalho (header) utilizamos o seguinte comando  
 ```{bash}
 seqkit replace [flags]
@@ -229,7 +229,7 @@ Flags:
   -r, --replacement string     replacement. supporting capture variables.  e.g. $1 represents the text of the first submatch. ATTENTION: for *nix OS, use SINGLE quote NOT double quotes or use the \ escape character. Record number is also supported by "{nr}".use ${1} instead of $1 when {kv} given!
 ```
 
-Aqui em nosso pequeno exemplo novamente iremos combinar a estrutura do terminal `bash` com a ferramenta SeqKit. Iremos realizar a edição de todos os cabeçalhos e acrescentaremos um contador em cada nome, com o objetivo de diferenciar cada uma das sequências também pelo nome (para evitar qualquer problema na execução de métodos que agrupam pelo nome as sequências).
+Aqui, em nosso pequeno exemplo, novamente iremos combinar a estrutura do terminal `bash` com a ferramenta SeqKit. Iremos realizar a edição de todos os cabeçalhos e acrescentaremos um contador em cada nome, com o objetivo de diferenciar cada uma das sequências, também pelo nome (para evitar qualquer problema na execução de métodos que agrupam as sequeências pelo nome).
 
 ```{bash}
 seqkit replace -p '.+' -r 'NEWNAME_{nr}' $fasta_input.fasta > $fasta_output.fasta
@@ -342,7 +342,7 @@ E uma saída similar a essa é esperada
 [INFO] output ...
 ```
 
-É importante notar que para manter a reprodutibilidade dos experimentos por outras pessoas da comunidade é recomendado a fixação do valor da semente, neste caso `1`, podendo ser utilizado qualquer outro valor.
+É importante notar que, para manter a reprodutibilidade dos experimentos por outras pessoas da comunidade, é recomendado a fixação do valor da semente, neste caso `1`, podendo ser utilizado qualquer outro valor.
 
 #### Amostragem de sequências
 A obtenção de uma amostra das sequências de uma arquivo FASTA é através do comando
@@ -397,7 +397,7 @@ E uma saída similar a essa é esperada
 ```
 
 #### Divisão de arquivos FASTA
-Para dividir um arquivo FASTA em outros arquivos baseado em uma proporção utilizamos o comando
+Para dividir um arquivo FASTA em outros arquivos baseado em uma proporção, utilizamos o comando
 ```{bash}
 seqkit split2 [flags]
 ```

@@ -1,8 +1,8 @@
 # BASiNET - Tutorial de instalação
 
-BASiNET é um pacote em R disponível no repositório CRAN destinado inicialmente para a classificação de sequências biológicas de RNA. Através do pacote BASiNET é possível realizar a classificação de sequências de RNA codificante (mRNA), longo não codificante (lncRNA) e curto não codificante (sncRNA). Além da classificação também é possível realizar o treinamento e salvar o modelo para análises/classificação posteriores.  
+BASiNET é um pacote em R disponível no repositório CRAN destinado inicialmente para a classificação de sequências biológicas de RNA. Através do pacote BASiNET é possível realizar a classificação de sequências de RNA codificante (mRNA), longo não codificante (lncRNA) e curto não-codificante (sncRNA). Além da classificação, também é possível realizar o treinamento e salvar o modelo para análises/classificação posteriores.  
 A instalação do pacote é feita através do comando 
-`install.packages` no próprio console do R. Um dos desafios da instalação são as depências necessárias para a instalação/utilização do pacote BASiNET.  
+`install.packages` no próprio console do R. Um dos desafios da instalação são as dependências necessárias para a instalação/utilização do pacote BASiNET.  
 Este tutorial traz um guia amigável para iniciantes, com informaçõs detalhadas sobre como instalar o pacote BASiNET sem ter qualquer conhecimento técnico.  
 
 __Este tutorial foi desenvolvido para o sistema operacional Linux, em particular distribuições Ubuntu 22.04, além do usuário necessitar privelégios de administrador para a instalação dos pacotes__ 
@@ -17,7 +17,7 @@ sudo apt -y upgrade
 ```
 
 ### Etapa 2: Instalação do R
-Ainda no terminal, digite o seguinte comando para a realizar a instalação da versão `base` do R. Essa versão contém as bibliotecas fundamentais para o desenvolvimento das atividades.
+Ainda no terminal, digite o seguinte comando para realizar a instalação da versão `base` do R. Essa versão contém as bibliotecas fundamentais para o desenvolvimento das atividades.
 
 ```{bash}
 sudo apt -y install r-base
@@ -52,8 +52,8 @@ Agora é possível digitar comandos e obter saídas através do console R. Para 
 
 ## Instalação das dependência do BASiNET
 
-O BASiNET depende de diversos pacotes, alguns já estão instalados juntamente com a versão `base` do R, outros precisamos realizar a instalação separadamente. Dentre os pacotes necessários para o funcionamento do BASiNET está o pacote [`rJava`](https://cran.r-project.org/web/packages/rJava/index.html) que depende da instalação da biblioteca de desenvolvedor do Java, o [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/downloads/). Para isso precisamos voltar ao nosso terminal para realizar a instalação (se necessário) do pacote em nosso sistema operacional.  
-__Nota: Em alguns casos não é necessário a instalação do JDK, necessitando somente a instalação do [Java Runtime Environment (JRE)](https://www.java.com/pt-BR/download/manual.jsp)__  
+O BASiNET depende de diversos pacotes, alguns já estão instalados juntamente com a versão `base` do R, outros precisamos realizar a instalação separadamente. Dentre os pacotes necessários para o funcionamento do BASiNET está o pacote [`rJava`](https://cran.r-project.org/web/packages/rJava/index.html) que depende da instalação da biblioteca de desenvolvedor do Java, o [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/downloads/). Para isso, precisamos voltar ao nosso terminal para realizar a instalação (se necessário) do pacote em nosso sistema operacional.  
+__Nota: Em alguns casos não é necessária a instalação do JDK, necessitando somente a instalação do [Java Runtime Environment (JRE)](https://www.java.com/pt-BR/download/manual.jsp)__  
 
 ### Instalação do Java
 
@@ -70,7 +70,7 @@ Após a execução dos comandos acima, verificamos se possuímos o Java instalad
 java -version
 ```
 
-Se o Java não estiver instalado, uma mensagem parecida com essa será exibida.
+Se o Java não estiver instalado, uma mensagem parecida como essa será exibida.
 ```{bash}
 Command 'java' not found, but can be installed with:
 
@@ -168,15 +168,15 @@ library("BASiNET")
 
 A função principal é a `classification` que aplica a metodologia proposta no artigo para a classificação das sequências de RNA. Ao fim da execução o resultado da classificação é obtido.  
 Os parâmetros da função são os seguintes:  
-* word: Define o número de bases nitrogenadas que formarão uma palavra. Por padrão o parâmetro word é definido como 3;  
-* step: Define a distância que será percorrida na sequência para a formação de uma nova conexão, em outras palavras é o tamanho da janela deslizante. Por padrão o parâmetro step é definido como 1;
+* word: Define o número de bases nitrogenadas que formarão uma palavra. Por padrão, o parâmetro word é definido como 3;  
+* step: Define a distância que será percorrida na sequência para a formação de uma nova conexão, em outras palavras é o tamanho da janela deslizante. Por padrão, o parâmetro step é definido como 1;
 * mRNA: Diretório do arquivo FASTA contendo sequências de mRNA;  
 * lncRNA: Diretório do arquivo FASTA contendo sequências de lncRNA;  
 * sncRNA: Diretório do arquivo FASTA contendo sequências de sncRNA;  
 * graphic: Se `TRUE` é considerado para a geração dos gráficos em relação aos valores de threshold e as medidas. Requer tempo de processamento e dependências internas do `igraph`;  
 * classifier: O classificador `J48` (árvore de decisão) é definido por padrão, caso o usuário opte por utilizar o classificador `randomForest` deve-se utilizar o parâmetro definido como `classifier = "RF"`. A predição com um modelo já treinado funciona somente com o parâmetro definido como `J48`, isto é, em sua definição padrão;  
 * load: Nome do arquivo `.dat` que será carregado como modelo para a predição de novas sequências de RNA. Por padrão é definido como `NULL`;  
-* save: Nome do arquivo `.dat` no qual o modelo treinado do classificador será salvo. O arquivo gerado poderá ser utilizado pelo parâmetro `load` para a predição de novas entradas. Por padrão é definido como `NULL`.
+* save: Nome do arquivo `.dat` no qual o modelo treinado do classificador será salvo. O arquivo gerado poderá ser utilizado pelo parâmetro `load` para a predição de novas entradas. Por padrão, é definido como `NULL`.
 
 ```{R}
 classification(mRNA, lncRNA, word = 3, step = 1, sncRNA, graphic, classifier = c("J48", "RF"), load, save)
@@ -189,7 +189,7 @@ lncRNA <- system.file("extdata", "sequences.fasta", package = "BASiNET")
 classification(mRNA,lncRNA)
 ``` 
 
-A saída esperado do comando é a seguinte:
+A saída esperada do comando é a seguinte:
 ```{R}
 Analyzing mRNA from number: 
 1
@@ -281,4 +281,4 @@ Levels: mRNA lncRNA
 ```
 
 ---
-Outras aplicações são possíveis utilizando o pacote, sinta-se livre para explora-lo :smile:.
+Outras aplicações são possíveis utilizando o pacote, sinta-se livre para explorá-lo :smile:.

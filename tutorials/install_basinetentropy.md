@@ -1,12 +1,12 @@
 # BASiNETEntropy - Tutorial de instalação
 
 BASiNETEntropy é um pacote em R disponível no repositório CRAN destinado inicialmente para a classificação de sequências biológicas de RNA, sendo uma versão atualizada do pacote BASiNET, com o diferencial de não possuir thresholds para a obtenção das medidas topológicas das redes complexas geradas a partir das sequências biológicas de entrada.  
-Através do pacote BASiNETEntropy é possível realizar a classificação de sequências de RNA codificante (mRNA), longo não codificante (lncRNA) e curto não codificante (sncRNA). Além da classificação também é possível realizar o treinamento e salvar o modelo para análises/classificação posteriores.  
+Através do pacote BASiNETEntropy é possível realizar a classificação de sequências de RNA codificante (mRNA), longo não-codificante (lncRNA) e curto não-codificante (sncRNA). Além da classificação também é possível realizar o treinamento e salvar o modelo para análises/classificação posteriores.  
 A instalação do pacote é feita através do comando 
 `install.packages` no próprio console do R.  
 Este tutorial traz um guia amigável para iniciantes, com informaçõs detalhadas sobre como instalar o pacote BASiNET sem ter qualquer conhecimento técnico.  
 
-__Este tutorial foi desenvolvido para o sistema operacional Linux, em particular distribuições Ubuntu 22.04, além do usuário necessitar privelégios de administrador para a instalação dos pacotes__ 
+__Este tutorial foi desenvolvido para o sistema operacional Linux, em particular, distribuições Ubuntu 22.04, além do usuário necessitar de privelégios de administrador para a instalação dos pacotes__ 
 
 *O pacote BASiNETEntropy necessita do R versão igual ou superior a 4.1*
 
@@ -30,7 +30,7 @@ Caso a versão do R seja mais antiga, consulte a documentação disponível no [
 
 ## Instalação das dependências
 
-As depências são instaladas diretamente no console R através dos comandos abaixo
+As dependências são instaladas diretamente no console R através dos comandos abaixo
 
 ```{R}
 install.packages("igraph")
@@ -41,7 +41,7 @@ __Esta etapa pode levar um tempo devido a instalação dos pacotes__
 
 ## Instalação do BASiNETEntropy
 
-Após a instalação de todas as depências, ainda no console R digite
+Após a instalação de todas as dependências, ainda no console R digite
 
 ```{R}
 install.packages("BASiNETEntropy")
@@ -59,8 +59,8 @@ Os parâmetros da função são os seguintes:
 * lncRNA: Diretório do arquivo FASTA contendo sequências de lncRNA;  
 * sncRNA: Diretório do arquivo FASTA contendo sequências de sncRNA;  
 * trainingResult: Resultado da etapa de treinamento, usualmente duas (ou três) matrizes armazenadas em uma lista. Este argumento pode ser implementado caso o usuário tenha domínio da linguagem R, sendo um parâmetro totalmente opcional e avançado do pacote;  
-* save_dataframe: Se `TRUE` salva as características extraídas em um arquivo `.csv` no diretório atual. Por padrão nenhum arquivo é criado;  
-* save_model: Se `TRUE` salva o modelo treinado para a classificação em formato `.rds` no diretório atual. Por padrão nenhum arquivo é criado.
+* save_dataframe: Se `TRUE` salva as características extraídas em um arquivo `.csv` no diretório atual. Por padrão, nenhum arquivo é criado;  
+* save_model: Se `TRUE` salva o modelo treinado para a classificação em formato `.rds` no diretório atual. Por padrão, nenhum arquivo é criado.
 
 ```{R}
 classify(mRNA,lncRNA,sncRNA = NULL,trainingResult,save_dataframe = NULL,save_model = NULL)
@@ -158,7 +158,7 @@ A seguinte saída é esperada
 
 ![CE](/img/entropy.png)
 
-A curva de soma de entropia refere-se à classe de mRNA, o threshold no ponto 986 é encontrado. Portanto, as arestas referentes aos pontos de 1 a 986 serão selecionadas e o restante será descartado.
+A curva de soma de entropia refere-se a classe de mRNA, o threshold no ponto 986 é encontrado. Portanto, as arestas referentes aos pontos de 1 a 986 serão selecionadas e o restante será descartado.
 
 ---
-Outras aplicações são possíveis utilizando o pacote, sinta-se livre para explora-lo :smile:.
+Outras aplicações são possíveis utilizando o pacote, sinta-se livre para explorá-lo :smile:.
