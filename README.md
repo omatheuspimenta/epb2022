@@ -14,7 +14,7 @@ Este curso irá apresentar este contexto e aplicação do método BASiNET que di
 * Apresentação do método [BASiNET](https://doi.org/10.1093/nar/gky462);
 * Hands on! Instalação e classificação de sequências biológicas utilizando o pacote [BASiNET](https://cran.r-project.org/package=BASiNET).
 
-### 09/08/2022
+### 09/08/2022 - [slides](slides/09-08-basinet-entropy-epb-2022.pdf)
 * Avanços na extração de características de RNA;
 * Apresentação do método [BASiNETEntropy](https://arxiv.org/abs/2203.15635);
 * Hands on! Instalação e classificação de sequências biológicas utilizando o pacote [BASiNETEntropy](https://CRAN.R-project.org/package=BASiNETEntropy).
