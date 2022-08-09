@@ -48,6 +48,9 @@ Abaixo alguns métodos disponíveis para a classificação de RNA. Sinta-se livr
 * [human_gencodev32_process](dataset/preprocessed/): Dataset ```human_gencodev32``` processado e selecionadas algumas sequências para dataset balanceado.
 * [human_gencodev38](https://www.gencodegenes.org/human/release_38.html): Dataset completo contendo todas as sequências de transcritos e de RNA longo não codificante. Disponível em: [`/dataset/human_r38/`](/dataset/human_r38/)
 * [mouse_gencodev27](https://www.gencodegenes.org/mouse/release_M27.html): Dataset completo contendo todas as sequências de transcritos e de RNA longo não codificante. Disponível em: [`/dataset/mouse_m27/`](/dataset/mouse_m27/)
+
+#### Lista de presença
+[Formulário do Google](https://forms.gle/C8xe7GT2DT59QDUi6)
 ### Autores
 [Fabrício Martins Lopes](https://github.com/fabriciomlopes)  
 [Matheus Pimenta](https://github.com/omatheuspimenta)

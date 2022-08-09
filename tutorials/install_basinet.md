@@ -138,6 +138,11 @@ BiocManager::install("Biostrings")
 ```
 Caso a versão do R seja mais antiga, consulte a documentação disponível no [Bioconductor](https://bioconductor.org/about/release-announcements/).
 
+Se apresentar erro, instale a seguinte lib com o comando 
+```{bash}
+sudo apt -y install libcurl4-openssl-dev
+```
+
 ### Instalação das demais dependências
 
 As demais depências são instaladas diretamente no console R através dos comandos abaixo
